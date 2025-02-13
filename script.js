@@ -134,7 +134,7 @@ function block_Cheating_Actions(element, event){
     });
 }
 // Eventos
-text_Area_User.addEventListener('keypress', start, false);
+text_Area_User.addEventListener('input', start, false);
 text_Area_User.addEventListener('keyup', spell_Check, false);
 btn_Reset.addEventListener('click', reset, false);
 btn_Theme_Dark_Of_Course.addEventListener('click', replacement_Dark_Of_Course);
