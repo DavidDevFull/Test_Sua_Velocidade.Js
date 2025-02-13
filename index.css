@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    color: white;
+    font-family: "Poppins", sans-serif;
+}
+:root{
+    --green: #086840;
+    --light_Green: #2E7D32;
+    --gray: #a8a8a8;
+    --dark_Gray: #121212;
+    --white: #bababa;
+    --red: #FF6B6B ;
+}
+body{
+    background: var(--white);
+    width: 100%;
+    height: 100dvh;
+    overflow: hidden;
+}
+/*************************************************/
+header{
+    margin: 0 auto;
+    width: 100%;
+    height: 250px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    background-color: var(--green);
+}
+.div_H1_Span_Score_Theme{
+    background: var(--dark_Gray);
+    width: clamp(95%, 1.7vw, 20rem);
+    width: 100%;
+    height: 125px;
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 2%;
+}
+.div_H1_Span_Score_Theme h1{
+    border-bottom: solid 2px var(--red);
+    font-size: clamp(1.9rem, 1.7vw, 2rem);
+}
+/*************************************************/
+.div_Span_Score_Theme{
+    width: clamp(85%, 1.7vw, 32rem);
+    max-width: 800px;
+    height: 40px;
+    margin: 16px;
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.div_Span_Score_Theme span{
+    font-size: clamp(1.2rem, 1.7vw, 2rem);
+}
+#btn_Theme_Dark_Of_Course{
+    width: 50px;
+    height: 50px;
+    border: solid 3px var(--red);
+    border-radius: 32px;
+    cursor: pointer;
+    background: var(--white);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.div_Information_App{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    margin: .8rem;
+}
+.div_Information_App p{
+    border-radius: 12px;
+    max-width: 950px;
+    font-size: clamp(.9rem, 1.7vw, 1.3rem);
+    
+}
+/*************************************************/
+.section_All_Elements{
+    width: clamp(95%, 1.7vw, 20rem);
+    margin: 2% auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1.1rem;
+}
+#p_Text_Ramdom{
+    background-color: var(--light_Green);
+    width: clamp(80%, 1.7vw, 32rem);
+    max-width: 900px;
+    border: solid 3px;
+    border-radius: 1rem;
+
+    font-size:clamp(.7rem, 1.7vw, 1.3rem);
+    padding: 1%;
+}
+#text_Area_User{
+    width: clamp(80%, 1.7vw, 10rem);
+    font-size:clamp(.9rem, 1.7vw, 1.4rem);
+    max-width: 900px;
+    height: 9rem;
+    padding: 9px 8px;
+    border: solid 9px var(--gray);
+    border-radius: 1rem;
+    color: var(--dark_Gray);
+    outline: none;
+}
+
+.div_span_Timer_Btn_Reset{
+    width: clamp(80%, 1.7vw, 9rem);
+    max-width: 800px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+}
+#span_Timer{
+    font-size: clamp(.9rem, 1.7vw, 1.5rem);
+    color: var(--black);
+    background: var(--red);
+    color: var(--white);
+    padding: 16px;
+}
+
+#btn_Reset{
+    width: 400px;
+    height: 65px;
+    color: var(--red);
+    cursor: pointer;
+    background: var(--white);
+    border: solid 3px var(--red);
+    font-size: clamp(.9rem, 1.7vw, 1.3rem);
+    transition: .9s;
+}
+#btn_Reset:hover{
+    border: none;
+    background: var(--red);
+    color: var(--white);
+    transition: .9s;
+}
+
+.dark_Theme{
+    background: linear-gradient(0deg, var(--light_Green) 0%, var(--dark_Gray) 75%);
+    
+}
+.of_Course_Theme{
+    background: linear-gradient(0deg, var(--light_Green) 0%, var(--white) 75%);
+}
