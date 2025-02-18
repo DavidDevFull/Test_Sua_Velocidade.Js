@@ -43,8 +43,6 @@ header{
     align-items: center;
     flex-direction: column;
     padding: 2%;
-
-    border: solid 1px;
 }
 .div_H1_Span_Score_Theme h1{
     border-bottom: solid 2px var(--red);
@@ -106,7 +104,6 @@ header{
     justify-content: center;
     flex-direction: column;
     gap: 1.1rem;
-    border: solid 1px;
 }
 /*************************************************/
 .section_H3_Lbls_P{
@@ -149,7 +146,6 @@ header{
     background: var(--gray);
     border: solid 2px var(--dark_Theme);
     border-radius: 3rem;
-
 }
 
 #p_Text_Ramdom{
@@ -159,7 +155,6 @@ header{
     font-size:clamp(.8rem, 1.7vw, 1.3rem);
     padding: 2%;
     border-bottom: #FF6B6B 3px solid;
-
 }
 /*************************************************/
 #text_Area_User{

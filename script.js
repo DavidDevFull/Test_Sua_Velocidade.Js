@@ -1,17 +1,17 @@
-const body = document.querySelector('body')
-const labels = document.querySelectorAll('.div_H3_Lbls div label')
+const body = document.querySelector('body');
+const labels = document.querySelectorAll('.div_H3_Lbls div label');
 const p_Text_Ramdom = document.getElementById('p_Text_Ramdom');
 const text_Area_User = document.getElementById('text_Area_User');
 const span_Timer = document.getElementById('span_Timer');
 const span_Record_Current = document.getElementById('span_Record_Current');
 const btn_Reset = document.getElementById('btn_Reset');
 const btn_Theme_Dark_Of_Course = document.getElementById('btn_Theme_Dark_Of_Course');
-const img_Button_Theme_Dark_Of_Course = document.querySelector('#btn_Theme_Dark_Of_Course img')
+const img_Button_Theme_Dark_Of_Course = document.querySelector('#btn_Theme_Dark_Of_Course img');
 
 let timer = [0, 0, 0, 0];
 let interval;
 let timer_Running = false;
-let best_Time = localStorage.getItem('best_Time');
+let best_Time = localStorage.getItem('best_Time') || null;
 
 const texts = [
     'A inteligência artificial evoluiu rapidamente, impactando setores como saúde, finanças e automação. Com algoritmos avançados, máquinas agora aprendem e tomam decisões, moldando o futuro da tecnologia e do trabalho humano.',
@@ -20,57 +20,61 @@ const texts = [
     'Desde o primeiro celular até os smartphones ultramodernos, os dispositivos móveis redefiniram a conectividade. Aplicativos, inteligência artificial e redes 5G tornam a comunicação mais rápida e eficiente, moldando nosso cotidiano.',
     'De linguagens primitivas como Assembly até frameworks avançados, a programação impulsionou a tecnologia. Hoje, inteligência artificial, cloud computing e desenvolvimento ágil aceleram a inovação e criam soluções digitais revolucionárias.'
 ];
-// Função de apoio para que o primeiro numero de cada array seja 0 caso seja menor que 9.
+
+// Função para formatar tempo corretamente
 function leading_Zero(time) {
     return time <= 9 ? '0' + time : time;
 }
-// Função que inicia o tempo.
+
+// Função que inicia o tempo
 function run_Timer() {
     let current_Timer = `${leading_Zero(timer[0])}:${leading_Zero(timer[1])}:${leading_Zero(timer[2])}`;
     span_Timer.innerHTML = current_Timer;
 
-    timer[3]++; 
+    timer[3]++;
     timer[0] = Math.floor((timer[3] / 100) / 60);
     timer[1] = Math.floor((timer[3] / 100) - (timer[0] * 60));
     timer[2] = Math.floor(timer[3] - (timer[1] * 100) - (timer[0] * 6000));
 }
 
-//Verifica se os valores digitados na caixa de texto é igual, diferente ou se foi completado corretamente.
+// Função para verificar o texto digitado
 function spell_Check() {
-    let text_Entered = text_Area_User.value;
-    let origin_Text = p_Text_Ramdom.textContent;
-    let origin_Text_Match = origin_Text.substring(0, text_Entered.length);
+    const userText = text_Area_User.value;
+    const targetText = p_Text_Ramdom.textContent;
 
-
-    labels.forEach((element_Lbl, index) => {
-        if (text_Entered === origin_Text) {
-            clearInterval(interval);
-            text_Area_User.style.borderColor = '#429890';
-            // Define a cor correta para este label e reseta os outros
-            labels.forEach((lbl, i) => lbl.style.background = i === index ? '#429890' : '#8d8a8a');
-        } else if (text_Entered === origin_Text_Match) {
-            text_Area_User.style.borderColor = '#6babff';
-            labels.forEach((lbl, i) => lbl.style.background = i === index ? '#6babff' : '#8d8a8a');
-        } else {
-            text_Area_User.style.borderColor = '#FF6B6B';
-            labels.forEach((lbl, i) => lbl.style.background = i === index ? '#FF6B6B' : '#8d8a8a');
-        }
-    
-        console.log(`Test index: ${index} - ${element_Lbl}`);
-    });
-
+    if (userText === targetText) {
+        text_Area_User.style.borderColor = '#429890'; // Verde para borda
+        labels[0].style.background = '#429890'; // Label verde
+        labels[1].style.background = '#8d8a8a'; // Outros cinza
+        labels[2].style.background = '#8d8a8a';
+        clearInterval(interval);
+        save_Status(); // Salva o recorde ao finalizar
+    } 
+    else if (targetText.startsWith(userText) && userText.length > 0) {
+        text_Area_User.style.borderColor = '#6babff'; // Azul para borda
+        labels[0].style.background = '#8d8a8a'; // Outros cinza
+        labels[1].style.background = '#6babff'; // Label azul
+        labels[2].style.background = '#8d8a8a';
+    } 
+    else {
+        text_Area_User.style.borderColor = '#FF6B6B'; // Vermelho para borda
+        labels[0].style.background = '#8d8a8a'; // Outros cinza
+        labels[1].style.background = '#8d8a8a';
+        labels[2].style.background = '#FF6B6B'; // Label vermelho
+    }
 }
-// Função que inicia o timer quando algo for digitado na caixa de texto.
+
+// Função para iniciar o temporizador
 function start() {
-    if (text_Area_User.value.length === 0 && !timer_Running) {
+    if (!timer_Running) {
         timer_Running = true;
         interval = setInterval(run_Timer, 10);
     }
 }
-// Função que reseta todos os valores.
+
+// Função para resetar o jogo
 function reset() {
     clearInterval(interval);
-    interval = 0;
     timer = [0, 0, 0, 0];
     timer_Running = false;
 
@@ -78,75 +82,50 @@ function reset() {
     span_Timer.innerHTML = '00:00:00';
     text_Area_User.style.borderColor = '#9b9b9b';
 
+    labels.forEach(label => label.style.background = '#8d8a8a'); // Reseta as cores das labels
+
     let text_Current = texts[Math.floor(Math.random() * texts.length)];
     p_Text_Ramdom.textContent = text_Current;
-
-    labels.style.background = '#8d8a8a;';
-}
-// Salva o melhor tempo e mostra o record atual do usuário.
-span_Record_Current.textContent = best_Time
-if(best_Time){
-    span_Record_Current.textContent = best_Time;
-}else{
-    span_Record_Current.textContent = 'Faça um record.';
 }
 
-
-
+// Função para salvar o melhor tempo
 function save_Status() {
-    let current_Time = span_Timer.textContent;
-
-    if (!best_Time || Number(current_Time.replace(/:/g, '')) < Number(best_Time.replace(/:/g, ''))) {
-        localStorage.setItem('best_Time', current_Time);
-        span_Record_Current.textContent = `${current_Time} 🎉 Novo recorde!`;
-        console.log(span_Record_Current)
+    let current_Time = span_Timer.textContent.replace(/:/g, '');
+    
+    if (!best_Time || Number(current_Time) < Number(best_Time.replace(/:/g, ''))) {
+        localStorage.setItem('best_Time', span_Timer.textContent);
+        best_Time = span_Timer.textContent;
+        span_Record_Current.textContent = `${best_Time} 🎉 Novo recorde!`;
     }
 }
-// Fução para trocar o tema de fundo
-function replacement_Dark_Of_Course(){
-    let current_Theme = body.classList.contains('dark_Theme') ? 'of_Course_Theme' :'dark_Theme'; // Valida qual tema está ativo e adiciona no let.
 
-    //Adiciona a classe correta.
-    body.classList.remove('of_Course_Theme', 'dark_Theme') // Tema que irá ser removido, validação será feita na linha 85.
-    body.classList.add(current_Theme) // Tema atual que será adicionado.
+// Atualiza o recorde salvo ao carregar a página
+span_Record_Current.textContent = best_Time ? best_Time : 'Faça um record.';
 
-    // Troca a imagem do botão
-    if (current_Theme === 'dark_Theme') {
-        img_Button_Theme_Dark_Of_Course.src = 'image/forma-de-meia-lua.png'; // Ícone de lua 🌙 (tema escuro)
-    } else {
-        img_Button_Theme_Dark_Of_Course.src = 'image/brilho-do-sol.png'; // Ícone de sol ☀️ (tema claro)
-    }
+// Função para trocar o tema
+function replacement_Dark_Of_Course() {
+    let current_Theme = body.classList.contains('dark_Theme') ? 'of_Course_Theme' : 'dark_Theme';
 
-    // Salva no localStorage
-    localStorage.setItem('theme', current_Theme); 
-    console.log(`Tema alterado para: ${current_Theme}`);
+    body.classList.remove('of_Course_Theme', 'dark_Theme');
+    body.classList.add(current_Theme);
+
+    img_Button_Theme_Dark_Of_Course.src = current_Theme === 'dark_Theme' ? 'image/forma-de-meia-lua.png' : 'image/brilho-do-sol.png';
+
+    localStorage.setItem('theme', current_Theme);
 }
+
 // Aplica o tema salvo ao carregar a página
 function applySavedTheme() {
-    let save_Theme = localStorage.getItem('theme') || 'of_Course_Theme';
-    body.classList.add(save_Theme);
+    let saved_Theme = localStorage.getItem('theme') || 'of_Course_Theme';
+    body.classList.add(saved_Theme);
 }
-// Função para bloquear copia e cola.
-function block_Cheating_Actions(element, event){
-    /*element.addEventListener("paste", (event) => {
-        event.preventDefault();
-        alert("❌ Você não pode colar texto aqui!");
-    });*/
 
-    /*element.addEventListener("copy", (event) => {
-        event.preventDefault();
-        alert("❌ Copiar texto também não é permitido!");
-    });*/
-
+// Bloqueia ações de trapaça (copiar, colar, cortar)
+function block_Cheating_Actions(element) {
     element.addEventListener("cut", (event) => {
         event.preventDefault();
         alert("❌ Cortar texto não é permitido!");
     });
-
-    /*element.addEventListener("contextmenu", (event) => {
-        alert("❌ Não é permitido abrir o menu do navegador.");
-        event.preventDefault();
-    });*/
 
     element.addEventListener("drop", (event) => {
         event.preventDefault();
@@ -154,19 +133,15 @@ function block_Cheating_Actions(element, event){
     });
 }
 
-
-if(!text_Area_User.value == ""){
-    start()
-}
-
-// Eventos
-//text_Area_User.addEventListener('keypress', start, false);
+// Adiciona eventos
+text_Area_User.addEventListener('input', start, false);
 text_Area_User.addEventListener('keyup', spell_Check, false);
 btn_Reset.addEventListener('click', reset, false);
 btn_Theme_Dark_Of_Course.addEventListener('click', replacement_Dark_Of_Course);
-block_Cheating_Actions(p_Text_Ramdom)
-block_Cheating_Actions(text_Area_User)
-block_Cheating_Actions(body)
+
+// Bloqueia trapaças nos elementos
+block_Cheating_Actions(p_Text_Ramdom);
+block_Cheating_Actions(text_Area_User);
+block_Cheating_Actions(body);
 
 applySavedTheme();
-console.log(labels)
