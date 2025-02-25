@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Puddles&display=swap');
 *{
     padding: 0;
     margin: 0;
@@ -10,45 +11,51 @@
     --gray: #8d8a8a;
     --dark_Theme: #121212;
     --white: #e7e7e7;
-    --red: #FF6B6B ;
     --green: #429866 ;
-    --blue: #6babff ;
+    --red: #FF6B6B;
+    --blue: #6babff;
 }
 body{
     background: var(--white);
     width: 100%;
     height: 100dvh;
-    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
 }
 /*************************************************/
 header{
-    margin: 0 auto;
     width: 100%;
     height: 200px;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
-    background-color: var(--green);
 }
 .div_H1_Span_Score_Theme{
-    background: var(--dark_Theme);
-    width: clamp(95%, 1.7vw, 20rem);
+    background: transparent;
     width: 100%;
     height: 125px;
-    margin: 0 auto;
 
     color: var(--white);
-
+    
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding: 2%;
+    padding: 1%;
 }
 .div_H1_Span_Score_Theme h1{
     border-bottom: solid 2px var(--red);
-    font-size: clamp(1.5rem, 1.7vw, 2rem);
+    animation: animation_H1 .7 infinit;
+    font-size: clamp(1.9rem, 1.7vw, 2rem);
+    font-family: "Rubik Puddles", serif;
+
+    background: linear-gradient(to right, var(--green) 0%, var(--red) 50%, var(--blue) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
+
 /*************************************************/
 .div_Span_Score_Theme{
     width: clamp(85%, 1.7vw, 32rem);
@@ -61,16 +68,17 @@ header{
     justify-content: space-between;
 }
 .div_Span_Score_Theme span{
-    font-size: clamp(1.2rem, 1.7vw, 2rem);
+    font-size: clamp(1.6rem, 1.7vw, 2rem);
+    font-family: "Rubik Puddles", serif;
+    
 }
 #btn_Theme_Dark_Of_Course{
     width: 50px;
     height: 50px;
     border: solid 3px var(--red);
-    border-radius: 32px;
+    border-radius: 100%;
     cursor: pointer;
     background: var(--white);
-
     display: flex;
     align-items: center;
     justify-content: center;
@@ -94,9 +102,6 @@ header{
 }
 /*************************************************/
 .section_All_Elements{
-    width: clamp(100%, 1.7vw, 20rem);
-    max-width: 800px;
-
     margin: 0 auto;
     padding: 16px;
 
@@ -104,20 +109,16 @@ header{
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    gap: 1.1rem;
+
+    gap: 1rem;
 }
 /*************************************************/
 .section_H3_Lbls_P{
-    background: linear-gradient(#ffffff, #ffffff) 50% 50%/calc(100% - 10px) calc(100% - 10px) no-repeat,
-    linear-gradient(315deg, transparent 0%, #ff6b6b 25%, #6babff 50%, #429866 100%);
-
-    padding: 1rem;
-    border-radius: .5rem;
-    max-width: 800px;
-
-    background-color: var(--white);
+    border: 5px solid transparent; /* Borda transparente */
+    border-image-source: linear-gradient(315deg, #ff6b6b, #6babff, #429866);
+    border-image-slice: 1;
+    
     color: var(--dark_Theme);
-
 }
 .div_H3_Lbls{
     width: 100%;
@@ -125,12 +126,10 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    
 }
 .div_H3_Lbls h3{
     font-size:clamp(.7rem, 1.7vw, 1.3rem);
     color: var(--dark_Theme);
-
 }
 .div_H3_Lbls div{
     width: clamp(25%, 1.7vw, 20rem);
@@ -139,35 +138,31 @@ header{
     align-items: center; 
 }
 .div_H3_Lbls div label{
-    width: 32px;
+    width: 2rem;
     height: 15px;
     background: var(--gray);
     border: solid 2px var(--dark_Theme);
     border-radius: 3rem;
 }
 
-#p_Text_Ramdom{
-    max-width: 800px;
+#p_Text_Random{
     color: var(--dark_Theme);
-
     font-size:clamp(.8rem, 1.7vw, 1.3rem);
     padding: 2%;
-    border-bottom: #FF6B6B 3px solid;
+    background: transparent;
 }
 /*************************************************/
 #text_Area_User{
-    width: clamp(80%, 1.7vw, 10rem);
     font-size:clamp(.9rem, 1.7vw, 1.4rem);
     width: 100%;
-    max-width: 800px;
-    height: 9rem;
+    height: 7.5rem;
     padding: 9px 8px;
     border: solid 5px var(--gray);
-    border-radius: .5rem;
     color: var(--dark_Theme);
     outline: none;
-}
+    background:transparent;
 
+}
 .div_span_Timer_Btn_Reset{
     width: 100%;
     max-width: 800px;
@@ -179,7 +174,7 @@ header{
 }
 .div_span_Timer_Btn_Reset div{
     width: 150px;
-    height: 65px;
+    height: 60px;
 
     border-radius: .5rem;
 
@@ -190,16 +185,15 @@ header{
 }
 #span_Timer{
     font-size: clamp(.9rem, 1.7vw, 1.5rem);
-    color: var(--dark_Theme);
     color: var(--white);
 }
 
 #btn_Reset{
     width: 400px;
-    height: 65px;
+    height: 60px;
     color: var(--red);
     cursor: pointer;
-    background: var(--white);
+    background: transparent;
     border: solid 3px var(--red);
     font-size: clamp(.9rem, 1.7vw, 1.3rem);
     border-radius: .5rem;
@@ -211,13 +205,60 @@ header{
     color: var(--white);
     transition: .9s;
 }
+/*************************************************/
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 3% 1%;
+    height: 100px;
+}
+footer span{
+    animation: animation_Font infinite 1.5s ;
+    font-size: clamp(.8rem, 1.7vw, 1.3rem);
+}
+footer a{
+    background: linear-gradient(to right, var(--green) 0%, var(--red) 50%, var(--blue) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: animation_Font infinite 1.5s ;
+    font-size: clamp(.8rem, 1.7vw, 1.3rem);
+}
+@keyframes animation_Font{
+    0%, 100%{
+        font-size: clamp(.8rem, 1.7vw, 1.3rem);
+    }50%{
+        font-size: clamp(.9rem, 1.7vw, 1.5rem);
+    }
+}
+.section_All_Elements, footer{
+    width: clamp(100%, 1.7vw, 20rem);
+    max-width: 800px;
+}
 
+.section_H3_Lbls_P,#p_Text_Random, #text_Area_User{
+    width: 100%;
+}
+/*************************************************/
 .dark_Theme{
-    background: var(--dark_Theme);
     transition: 0.9;
+    color: var(--white);
+    background: var(--dark_Theme);
     background: of_Course_Theme_For_dark_Theme;
     animation: of_Course_Theme_For_dark_Theme .7s linear;
 }
+.of_Course_Theme{
+    transition: 0.9;
+    color: var(--dark_Theme);
+    background: var(--white);
+    animation: dark_Theme_Theme_For_Of_Course_Theme .7s linear;
+}
+
+
+
+
+
+
 @keyframes of_Course_Theme_For_dark_Theme{
     0%{
         background: var(--white);
@@ -226,11 +267,6 @@ header{
         background: var(--dark_Theme);
         border: (var(--white));
     }
-
-}
-.of_Course_Theme{
-    background: var(--white);
-    animation: dark_Theme_Theme_For_Of_Course_Theme .7s linear;
 }
 @keyframes dark_Theme_Theme_For_Of_Course_Theme{
     0%{
@@ -238,5 +274,4 @@ header{
     }100%{
         background: var(--white);
     }
-
 }
