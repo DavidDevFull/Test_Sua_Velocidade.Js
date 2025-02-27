@@ -10,13 +10,13 @@
     --light_Green: #2E7D32;
     --gray: #8d8a8a;
     --dark_Theme: #121212;
-    --white: #e7e7e7;
+    --of_Course_Theme: #e7e7e7;
     --green: #429866 ;
     --red: #FF6B6B;
     --blue: #6babff;
 }
 body{
-    background: var(--white);
+    background: var(--dark_Theme);
     width: 100%;
     height: 100dvh;
     display: flex;
@@ -37,7 +37,7 @@ header{
     width: 100%;
     height: 125px;
 
-    color: var(--white);
+    color: var(--of_Course_Theme);
     
     display: flex;
     justify-content: center;
@@ -57,7 +57,7 @@ header{
 }
 
 /*************************************************/
-.div_Span_Score_Theme{
+.div_Span_Score{
     width: clamp(85%, 1.7vw, 32rem);
     max-width: 700px;
     height: 40px;
@@ -65,38 +65,27 @@ header{
     
     display: flex;
     align-items: center;
-    justify-content: space-between;
-}
-.div_Span_Score_Theme span{
-    font-size: clamp(1.6rem, 1.7vw, 2rem);
-    font-family: "Rubik Puddles", serif;
-    
-}
-#btn_Theme_Dark_Of_Course{
-    width: 50px;
-    height: 50px;
-    border: solid 3px var(--red);
-    border-radius: 100%;
-    cursor: pointer;
-    background: var(--white);
-    display: flex;
-    align-items: center;
     justify-content: center;
+}
+.div_Span_Score span{
+    font-size: clamp(1.4rem, 1.7vw, 2rem);
+    font-family: "Rubik Puddles", serif;    
 }
 .div_Information_App{
     padding: 8px;
-    height: 75px;
+    height: 80px;
+    max-width: 800px;
+    margin: 0 auto;
 
     display: flex;
     align-items: center;
     justify-content: center;
-    background: var(--white);
-
-    border: solid 1px var(--dark_Theme);
+    background: var(--of_Course_Theme);
+    border-radius: 1.1rem;
+    border: solid ;
 }
 .div_Information_App p{
     border-radius: 12px;
-    max-width: 950px;
     font-size: clamp(.8rem, 1.7vw, 1rem);
     color: var(--dark_Theme);
 }
@@ -128,8 +117,8 @@ header{
     align-items: center;
 }
 .div_H3_Lbls h3{
-    font-size:clamp(.7rem, 1.7vw, 1.3rem);
-    color: var(--dark_Theme);
+    font-size:clamp(.8rem, 1.7vw, 1.3rem);
+    color: var(--of_Course_Theme);
 }
 .div_H3_Lbls div{
     width: clamp(25%, 1.7vw, 20rem);
@@ -141,12 +130,12 @@ header{
     width: 2rem;
     height: 15px;
     background: var(--gray);
-    border: solid 2px var(--dark_Theme);
+    border: solid 2px var(--of_Course_Theme);
     border-radius: 3rem;
 }
 
 #p_Text_Random{
-    color: var(--dark_Theme);
+    color: var(--of_Course_Theme);
     font-size:clamp(.8rem, 1.7vw, 1.3rem);
     padding: 2%;
     background: transparent;
@@ -158,10 +147,9 @@ header{
     height: 7.5rem;
     padding: 9px 8px;
     border: solid 5px var(--gray);
-    color: var(--dark_Theme);
+    color: var(--of_Course_Theme);
     outline: none;
     background:transparent;
-
 }
 .div_span_Timer_Btn_Reset{
     width: 100%;
@@ -185,7 +173,7 @@ header{
 }
 #span_Timer{
     font-size: clamp(.9rem, 1.7vw, 1.5rem);
-    color: var(--white);
+    color: var(--of_Course_Theme);
 }
 
 #btn_Reset{
@@ -202,7 +190,7 @@ header{
 #btn_Reset:hover{
     border: none;
     background: var(--red);
-    color: var(--white);
+    color: var(--of_Course_Theme);
     transition: .9s;
 }
 /*************************************************/
@@ -222,13 +210,12 @@ footer a{
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: animation_Font infinite 1.5s ;
-    font-size: clamp(.8rem, 1.7vw, 1.3rem);
 }
 @keyframes animation_Font{
     0%, 100%{
-        font-size: clamp(.8rem, 1.7vw, 1.3rem);
+        font-size: clamp(1rem, 1.7vw, 1.3rem);
     }50%{
-        font-size: clamp(.9rem, 1.7vw, 1.5rem);
+        font-size: clamp(1.1rem, 1.7vw, 1.4rem);
     }
 }
 .section_All_Elements, footer{
@@ -238,40 +225,4 @@ footer a{
 
 .section_H3_Lbls_P,#p_Text_Random, #text_Area_User{
     width: 100%;
-}
-/*************************************************/
-.dark_Theme{
-    transition: 0.9;
-    color: var(--white);
-    background: var(--dark_Theme);
-    background: of_Course_Theme_For_dark_Theme;
-    animation: of_Course_Theme_For_dark_Theme .7s linear;
-}
-.of_Course_Theme{
-    transition: 0.9;
-    color: var(--dark_Theme);
-    background: var(--white);
-    animation: dark_Theme_Theme_For_Of_Course_Theme .7s linear;
-}
-
-
-
-
-
-
-@keyframes of_Course_Theme_For_dark_Theme{
-    0%{
-        background: var(--white);
-        border: var(--dark_Theme);
-    }100%{
-        background: var(--dark_Theme);
-        border: (var(--white));
-    }
-}
-@keyframes dark_Theme_Theme_For_Of_Course_Theme{
-    0%{
-        background: var(--dark_Theme);
-    }100%{
-        background: var(--white);
-    }
 }

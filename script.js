@@ -5,8 +5,6 @@ const text_Area_User = document.getElementById('text_Area_User');
 const span_Timer = document.getElementById('span_Timer');
 const span_Record_Current = document.getElementById('span_Record_Current');
 const btn_Reset = document.getElementById('btn_Reset');
-const btn_Theme_Dark_Of_Course = document.getElementById('btn_Theme_Dark_Of_Course');
-const img_Button_Theme_Dark_Of_Course = document.querySelector('#btn_Theme_Dark_Of_Course img');
 
 let timer = [0, 0, 0, 0];
 let interval;
@@ -108,39 +106,7 @@ function save_Status() {
 // Atualiza o recorde salvo ao carregar a página
 span_Record_Current.textContent = best_Time ? best_Time : 'Faça um record.';
 
-// Função para trocar o tema
-/*function replacement_Dark_Of_Course() {
-    let current_Theme = body.classList.contains('dark_Theme') ? 'of_Course_Theme' : 'dark_Theme';
-
-    body.classList.remove('of_Course_Theme', 'dark_Theme');
-    body.classList.add(current_Theme);
-
-    img_Button_Theme_Dark_Of_Course.src = current_Theme === 'dark_Theme' ? 'image/forma-de-meia-lua.png' : 'image/brilho-do-sol.png';
-
-    localStorage.setItem('theme', current_Theme);
-}*/
-function replacement_Theme(element_Html) {
-
-    let current_Theme = element_Html.classList.contains('dark_Theme') ? 'of_Course_Theme' : 'dark_Theme';
-
-    element_Html.classList.remove('of_Course_Theme', 'dark_Theme');
-    element_Html.classList.add(current_Theme);
-
-    img_Button_Theme_Dark_Of_Course.src = current_Theme === 'dark_Theme' ? 'image/forma-de-meia-lua.png' : 'image/brilho-do-sol.png';
-
-    localStorage.setItem('theme', current_Theme);
-
-}
-
-// Aplica o tema salvo ao carregar a página
-function applySavedTheme() {
-    let saved_Theme = localStorage.getItem('theme') || 'of_Course_Theme';
-    body.classList.add(saved_Theme);
-    p_Text_Random.classList.add(saved_Theme);
-}
-
 // Bloqueia ações de trapaça (copiar, colar, cortar)
-/*
 function block_Cheating_Actions(element) {
     element.addEventListener("paste", (event) => {
         event.preventDefault();
@@ -162,17 +128,13 @@ function block_Cheating_Actions(element) {
         event.preventDefault();
         alert("❌ O botão direito do mouse foi desativado!");
     });
-}*/
-
+}
 // Adiciona eventos
 text_Area_User.addEventListener('input', start, false);
 text_Area_User.addEventListener('keyup', spell_Check, false);
 btn_Reset.addEventListener('click', reset, false);
-btn_Theme_Dark_Of_Course.addEventListener('click', replacement_Theme(body));
 
 // Bloqueia trapaças nos elementos
-/*block_Cheating_Actions(p_Text_Random);
+block_Cheating_Actions(p_Text_Random);
 block_Cheating_Actions(text_Area_User);
-block_Cheating_Actions(body);*/
-
-applySavedTheme();
+block_Cheating_Actions(body);
