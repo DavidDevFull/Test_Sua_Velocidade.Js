@@ -47,7 +47,12 @@ cd typing-speed-master
 ```
 3.Abra o arquivo index.html no navegador.
 
-## Link do projeto🔗
+## 📸Imagem.
+
+![Test de velocidade! - Opera 02_03_2025 00_03_37](https://github.com/user-attachments/assets/fa79ffbc-52c4-48c1-8f55-749775f1b0b0)
+
+## 🔗Link do projeto. 
+
 https://daviddevfull.github.io/Test_Sua_Velocidade.Js/
 
 ## 📝 Licença
