@@ -6,7 +6,14 @@ Typing Speed Master é um site interativo que mede a velocidade e precisão do u
 Este projeto foi desenvolvido no curso JavaScript: Formação Básica da plataforma LinkedIn Learning, abordando os conceitos introdutórios da linguagem e reforçando a lógica de programação.
 ## 🎯 Funcionalidades
 
-✅ Texto Aleatório: Exibe um parágrafo aleatório para o usuário digitar. ✅ Medição de Tempo: A contagem de tempo inicia automaticamente ao começar a digitação. ✅ Verificação de Erros em Tempo Real:➡️ Caracteres corretos são destacados em azul. ➡️ Caracteres errados são destacados em vermelho até serem corrigidos. ✅ Resultados: Ao finalizar a digitação, o tempo total e a precisão são exibidos. ✅ Botão "Reiniciar": Permite ao usuário recomeçar o teste. ✅ Estatísticas: Os dados são armazenados no LocalStorage, permitindo acompanhar a evolução do desempenho.
+✅ Texto Aleatório: Exibe um parágrafo aleatório para o usuário digitar. 
+✅ Medição de Tempo: A contagem de tempo inicia automaticamente ao começar a digitação. 
+✅ Verificação de Erros em Tempo Real:
+➡️ Caracteres corretos são destacados em azul. 
+➡️ Caracteres errados são destacados em vermelho até serem corrigidos. 
+✅ Resultados: Ao finalizar a digitação, o tempo total e a precisão são exibidos. 
+✅ Botão "Reiniciar": Permite ao usuário recomeçar o teste. 
+✅ Estatísticas: Os dados são armazenados no LocalStorage, permitindo acompanhar a evolução do desempenho.
 
 ## 🛠️ Tecnologias Utilizadas
 
