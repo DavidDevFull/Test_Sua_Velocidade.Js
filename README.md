@@ -47,6 +47,9 @@ cd typing-speed-master
 ```
 3.Abra o arquivo index.html no navegador.
 
+## Link do projeto🔗
+https://daviddevfull.github.io/Test_Sua_Velocidade.Js/
+
 ## 📝 Licença
 
 Este projeto está sob a licença MIT. Veja o arquivo LICENSE para mais detalhes.
