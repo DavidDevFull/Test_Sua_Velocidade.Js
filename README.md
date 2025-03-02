@@ -31,10 +31,13 @@ Ranking de melhor pontuação.
 ## 🚀 Como Executar o Projeto
 
 Clone este repositório:
-git clone https://github.com/DavidDevFull/Test_Sua_Velocidade_Js
+```
+git clone https://github.com/DavidDevFull/Test_Sua_Velocidade.Js
+```
 2.Acesse a pasta do projeto:
-
+```
 cd typing-speed-master
+```
 3.Abra o arquivo index.html no navegador.
 
 ## 📝 Licença
