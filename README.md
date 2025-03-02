@@ -1,14 +1,14 @@
-#🚀 Typing Speed Master - Teste de Velocidade de Digitação
+# 🚀 Typing Speed Master - Teste de Velocidade de Digitação.
 
-##📌 Descrição
+## 📌 Descrição
 Typing Speed Master é um site interativo que mede a velocidade e precisão do usuário ao digitar. O programa exibe um texto aleatório que deve ser digitado corretamente, enquanto mede o tempo e destaca erros em tempo real.
 
 Este projeto foi desenvolvido no curso JavaScript: Formação Básica da plataforma LinkedIn Learning, abordando os conceitos introdutórios da linguagem e reforçando a lógica de programação.
-##🎯 Funcionalidades
+## 🎯 Funcionalidades
 
 ✅ Texto Aleatório: Exibe um parágrafo aleatório para o usuário digitar. ✅ Medição de Tempo: A contagem de tempo inicia automaticamente ao começar a digitação. ✅ Verificação de Erros em Tempo Real:➡️ Caracteres corretos são destacados em azul. ➡️ Caracteres errados são destacados em vermelho até serem corrigidos. ✅ Resultados: Ao finalizar a digitação, o tempo total e a precisão são exibidos. ✅ Botão "Reiniciar": Permite ao usuário recomeçar o teste. ✅ Estatísticas: Os dados são armazenados no LocalStorage, permitindo acompanhar a evolução do desempenho.
 
-##🛠️ Tecnologias Utilizadas
+## 🛠️ Tecnologias Utilizadas
 
 HTML, CSS, JavaScript puro.
 
@@ -28,7 +28,7 @@ Closures e funções modularizadas para melhor organização do código.
 
 Ranking de melhor pontuação.
 
-##🚀 Como Executar o Projeto
+## 🚀 Como Executar o Projeto
 
 Clone este repositório:
 git clone https://github.com/DavidDevFull/Test_Sua_Velocidade_Js
@@ -37,7 +37,7 @@ git clone https://github.com/DavidDevFull/Test_Sua_Velocidade_Js
 cd typing-speed-master
 3.Abra o arquivo index.html no navegador.
 
-##📝 Licença
+## 📝 Licença
 
 Este projeto está sob a licença MIT. Veja o arquivo LICENSE para mais detalhes.
 
